@@ -1,6 +1,6 @@
 import { type ActionArgs, defer } from '@remix-run/node';
 
-export async function action({ request }: ActionArgs) {
+export async function loader({ request }: ActionArgs) {
   const example_data = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('Hello World!');

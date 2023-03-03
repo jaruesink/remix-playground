@@ -10,14 +10,22 @@ export const DeferredComponent = () => {
   // fetcher.submission;
   // fetcher.data;
 
+  console.log('>>>>>', fetcher.data);
+
   return (
-    <fetcher.Form action='/resources/deferred-example'>
-      <Suspense fallback={<>Loading...</>}>
-        <Await resolve={fetcher.data.example_data}>
+    <>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Await resolve={fetcher.data?.example_data}>
           {(data) => <p>{data}</p>}
         </Await>
       </Suspense>
-      <button type='submit'>Submit</button>
-    </fetcher.Form>
+      <button
+        onClick={() => {
+          fetcher.load('/resources/deferred-example');
+        }}
+      >
+        Submit
+      </button>
+    </>
   );
 };
