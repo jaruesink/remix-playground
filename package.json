@@ -5,8 +5,9 @@
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
-    "dev": "BROWSER=none WDS_SOCKET_PORT=0 remix dev",
-    "start": "remix-serve build",
+    "dev": "npm run start",
+    "start": "BROWSER=none WDS_SOCKET_PORT=0 remix dev",
+    "serve-build": "remix-serve build",
     "typecheck": "tsc"
   },
   "dependencies": {
