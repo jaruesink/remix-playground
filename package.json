@@ -2,20 +2,31 @@
   "name": "codespaces-react",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.4.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1",
-    "web-vitals": "^3.1.0"
-  },
+  "sideEffects": false,
   "scripts": {
-    "start": "BROWSER=none WDS_SOCKET_PORT=0 react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "remix build",
+    "dev": "BROWSER=none WDS_SOCKET_PORT=0 remix dev",
+    "start": "remix-serve build",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@remix-run/node": "^1.14.0",
+    "@remix-run/react": "^1.14.0",
+    "@remix-run/serve": "^1.14.0",
+    "isbot": "^3.6.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.14.0",
+    "@remix-run/eslint-config": "^1.14.0",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "eslint": "^8.27.0",
+    "typescript": "^4.8.4"
+  },
+  "engines": {
+    "node": ">=14"
   },
   "eslintConfig": {
     "extends": [
