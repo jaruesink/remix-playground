@@ -1,7 +1,10 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "name": "Remix Playground",
   "hostRequirements": {
     "cpus": 4
+  },
+  "build": {
+    "dockerfile": "Dockerfile"
   },
   "waitFor": "onCreateCommand",
   "updateContentCommand": "npm install",
@@ -11,9 +14,7 @@
   },
   "customizations": {
     "codespaces": {
-      "openFiles": [
-        "src/App.js"
-      ]
+      "openFiles": ["src/App.js"]
     }
   },
   "portsAttributes": {
@@ -22,5 +23,5 @@
       "onAutoForward": "openPreview"
     }
   },
-  "forwardPorts": [3000]
+  "forwardPorts": [3000, 5432]
 }
