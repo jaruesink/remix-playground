@@ -19,7 +19,7 @@ RUN mkdir -p /var/lib/postgresql/data \
 USER postgres
 
 # Initialize the PostgreSQL database
-RUN /usr/lib/postgresql/13/bin/initdb -D /var/lib/postgresql/data \
+RUN pg_ctl initdb -D /var/lib/postgresql/data \
     && echo "host all  all    0.0.0.0/0  md5" >> /var/lib/postgresql/data/pg_hba.conf \
     && echo "listen_addresses='*'" >> /var/lib/postgresql/data/postgresql.conf
 
