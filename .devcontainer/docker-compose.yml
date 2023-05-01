@@ -31,6 +31,8 @@ services:
       POSTGRES_USER: myuser
       POSTGRES_DB: mydatabase
 
+    # https://stackoverflow.com/questions/64704330/how-to-connect-to-postgres-from-github-codespacesgit
+    network_mode: host
     # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward MongoDB locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 

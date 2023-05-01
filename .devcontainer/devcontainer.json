@@ -8,7 +8,6 @@
   "workspaceFolder": "workspaces",
   "waitFor": "onCreateCommand",
   "updateContentCommand": "npm install",
-  "postCreateCommand": "docker-compose up -d",
   "postAttachCommand": {
     "server": "npm start"
   },
