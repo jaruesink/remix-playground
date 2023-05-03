@@ -10,8 +10,6 @@ export const DeferredComponent = () => {
   // fetcher.submission;
   // fetcher.data;
 
-  console.log('>>>>>', fetcher.data);
-
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
