@@ -17,21 +17,24 @@ export const generateCSSVariablesInnerHTML = ({
 }) => {
   let cssVarsString = '';
   if (primary_theme_colors) {
-    cssVarsString = ['primary'].reduce((cssVarsStringAcc, colorTypeCurr) => {
-      const colorObjects: Record<string, any> = {
-        primary: primary_theme_colors,
-      };
+    cssVarsString = ['primary'].reduce(
+      (cssVarsStringAcc, colorTypeCurr) => {
+        const colorObjects: Record<string, any> = {
+          primary: primary_theme_colors,
+        };
 
-      const colorVariables = Object.entries<string>(
-        colorObjects[colorTypeCurr]
-      ).reduce((acc, [colorKey, colorValue]) => {
-        return (acc += `--color-${colorTypeCurr}-${colorKey.replace(
-          'color_',
-          ''
-        )}: ${hexToRgb(colorValue)};`);
-      }, '');
-      return (cssVarsStringAcc += colorVariables);
-    }, '');
+        const colorVariables = Object.entries<string>(
+          colorObjects[colorTypeCurr]
+        ).reduce((acc, [colorKey, colorValue]) => {
+          return (acc += `--color-${colorTypeCurr}-${colorKey.replace(
+            'color_',
+            ''
+          )}: ${hexToRgb(colorValue)};`);
+        }, '');
+        return (cssVarsStringAcc += colorVariables);
+      },
+      ''
+    );
   }
 
   return `:root {${cssVarsString}}`;
