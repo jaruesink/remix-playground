@@ -3,7 +3,7 @@
   "hostRequirements": {
     "cpus": 4
   },
-  "dockerComposeFile": "docker-compose.yml",
+  "dockerComposeFile": "../docker-compose.yml",
   "service": "app",
   "workspaceFolder": "workspaces",
   "waitFor": "onCreateCommand",
