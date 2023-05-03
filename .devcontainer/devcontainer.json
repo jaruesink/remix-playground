@@ -5,7 +5,7 @@
   },
   "dockerComposeFile": "../docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "workspaces",
+  "workspaceFolder": "workspaces/remix-playground",
   "waitFor": "onCreateCommand",
   "updateContentCommand": "npm install",
   "postAttachCommand": {
