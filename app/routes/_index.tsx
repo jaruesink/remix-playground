@@ -18,10 +18,10 @@ export default function Index() {
       </h1>
 
       <ul className='pl-8'>
-        <li className='list-disc'>
+        <li className='list-disc underline'>
           <Link to='/deferred'>Deferred Example</Link>
         </li>
-        <li className='list-disc'>
+        <li className='list-disc underline'>
           <Link to='/dynamic-themes'>Dynamic Themes</Link>
         </li>
       </ul>
