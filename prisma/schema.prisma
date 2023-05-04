@@ -11,21 +11,26 @@ datasource db {
 }
 
 model Test {
-  id    Int      @id @default(autoincrement())
-  hello String       @default("world")
+  id    Int    @id @default(autoincrement())
+  hello String @default("world")
 }
 
 model Theme {
-  id        Int      @id @default(autoincrement())
-  name      String
-  color_50  String
-  color_100 String
-  color_200 String
-  color_300 String
-  color_400 String
-  color_500 String
-  color_600 String
-  color_700 String
-  color_800 String
-  color_900 String
+  id           Int            @id @default(autoincrement())
+  name         String
+  color_50     String
+  color_100    String
+  color_200    String
+  color_300    String
+  color_400    String
+  color_500    String
+  color_600    String
+  color_700    String
+  color_800    String
+  color_900    String
+}
+
+model SiteSettings {
+  id      Int   @id @default(autoincrement())
+  themeId Int
 }
