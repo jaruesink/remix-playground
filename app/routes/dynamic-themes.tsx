@@ -30,6 +30,18 @@ export async function action({ request }: ActionArgs) {
   };
   const { themeId } = data;
 
+  if (request.method === 'DELETE') {
+    const theme = await prisma.theme.delete({
+      where: { id: parseInt(themeId) },
+    });
+
+    const siteSettings = await prisma.siteSettings.findUnique({
+      where: { id: 1 },
+    });
+
+    return json({ siteSettings });
+  }
+
   const siteSettings = await prisma.siteSettings.update({
     where: { id: 1 },
     data: {
@@ -54,13 +66,16 @@ export default function Index() {
       themeId: string;
     };
     const { themeId } = data;
-    deleteThemeFetcher.load(`/resources/themes-delete/${themeId}`);
+    deleteThemeFetcher.submit(
+      { themeId },
+      { action: `/dynamic-themes`, method: 'DELETE' }
+    );
     revalidator.revalidate();
   };
 
   return (
     <main className='container mx-auto p-8'>
-      <h1 className='text-primary-500 font-bold mb-8'>
+      <h1 className='text-primary-900 font-bold mb-8'>
         Dynamic Themes Example
       </h1>
 
