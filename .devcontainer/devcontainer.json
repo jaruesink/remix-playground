@@ -14,7 +14,15 @@
   "customizations": {
     "codespaces": {
       "openFiles": ["app/routes/index.tsx"]
-    }
+	},
+	"vscode": {
+		"extensions": [
+			"ms-azuretools.vscode-docker",
+			"GitHub.copilot",
+			"esbenp.prettier-vscode",
+			"bradlc.vscode-tailwindcss"
+		]
+	}
   },
   "portsAttributes": {
     "3000": {

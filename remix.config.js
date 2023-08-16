@@ -9,5 +9,6 @@ module.exports = {
   tailwind: true,
   future: {
     v2_routeConvention: true,
+    v2_dev: true,
   },
 };
